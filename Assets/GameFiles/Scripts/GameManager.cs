@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GameFiles.Scripts
 {
@@ -26,6 +27,11 @@ namespace GameFiles.Scripts
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+        }
+
+        public static void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

@@ -488,7 +488,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1080,9 +1080,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1113595047}
   - component: {fileID: 1113595046}
+  - component: {fileID: 1113595048}
   m_Layer: 0
   m_Name: Moon
-  m_TagString: Untagged
+  m_TagString: moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1151,6 +1152,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1113595048
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113595045}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1315022587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1521,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_DynamicOccludee
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008022484502063367, guid: 0d6a21f7814a0b141b7ef613c40b8a45,
+        type: 3}
+      propertyPath: BoostThrust
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008022484502063367, guid: 0d6a21f7814a0b141b7ef613c40b8a45,
+        type: 3}
+      propertyPath: MaxSteerAngleAfterLaunch
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3008022484502063385, guid: 0d6a21f7814a0b141b7ef613c40b8a45,
         type: 3}
