@@ -7,23 +7,27 @@ namespace GameFiles.Scripts
     {
         public float LaunchThurst = 500;
         public float BoostThrust = 800;
+        public float TurnSenstivityAtLaunch = 0.3f;
 
         private Rigidbody2D _rigidbody;
         private bool _launched;
-        private StatsManager _statsManager;
+        private RocketManager _rocketManager;
+        private BulletShooter _bulletShooter;
         private Rotator _rotator;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _rigidbody.bodyType = RigidbodyType2D.Static;
-            _statsManager = GetComponent<StatsManager>();
+            _rigidbody.gravityScale = 0.5f; //todo make configurable
+            _rocketManager = GetComponent<RocketManager>();
+            _bulletShooter = GetComponent<BulletShooter>();
             _rotator = GetComponent<Rotator>();
         }
 
         private void Update()
         {
-            if (!_statsManager.IsAlive())
+            if (!_rocketManager.IsAlive())
             {
                 return;
             }
@@ -34,14 +38,22 @@ namespace GameFiles.Scripts
                 _rigidbody.bodyType = RigidbodyType2D.Dynamic;
                 _rigidbody.AddForce(transform.up * LaunchThurst);
                 _rotator.Detach();
+                _rotator.SetTurnSenstivity(TurnSenstivityAtLaunch);
+                return;
             }
 
             if (_launched)
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1) && _statsManager.CanBoost())
+                if (Input.GetKeyDown(KeyCode.Space) && _rocketManager.CanBoost())
                 {
-                    _statsManager.UseBoost();
+                    _rocketManager.UseBoost();
                     _rigidbody.AddForce(transform.up * BoostThrust);
+                }
+
+                if (Input.GetKeyDown(KeyCode.E) && _rocketManager.CanShoot())
+                {
+                    _rocketManager.UseBullet();
+                    _bulletShooter.Shoot();
                 }
             }
         }
@@ -50,15 +62,15 @@ namespace GameFiles.Scripts
         {
             if (other.CompareTag(Tag.Boundary))
             {
-                _statsManager.Die();
+                _rocketManager.Die();
                 GameManager.Restart(); // todo remove
                 return;
             }
 
             if (other.CompareTag(Tag.Moon))
             {
-                Debug.Log("You Won!");
-                GameManager.Restart();
+                Debug.Log("You Won!"); // todo remove
+                GameManager.Restart(); // todo remove
             }
         }
     }

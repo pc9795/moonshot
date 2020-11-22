@@ -6,7 +6,7 @@ namespace GameFiles.Scripts
     {
         public float TurnSenstiivity = 1;
         public float MaxSteerAngle = 30;
-        public Transform LaunchPlatformStand;
+        public Transform Stand;
 
         private float _horizontalInput;
         private bool _deatached;
@@ -17,7 +17,7 @@ namespace GameFiles.Scripts
             var steerAngle = _horizontalInput * MaxSteerAngle * TurnSenstiivity;
             if (!_deatached)
             {
-                transform.RotateAround(LaunchPlatformStand.transform.position, Vector3.back, steerAngle);
+                transform.RotateAround(Stand.position, Vector3.back, steerAngle);
             }
             else
             {
@@ -25,10 +25,14 @@ namespace GameFiles.Scripts
             }
         }
 
+        public void SetTurnSenstivity(float turnSenstivity)
+        {
+            TurnSenstiivity = turnSenstivity;
+        }
+
         public void Detach()
         {
             _deatached = true;
-            TurnSenstiivity = 0.3f;
         }
     }
 }
