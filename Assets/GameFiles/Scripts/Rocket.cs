@@ -8,11 +8,13 @@ namespace GameFiles.Scripts
         public float LaunchThurst = 500;
         public float BoostThrust = 800;
         public float TurnSenstivityAtLaunch = 0.3f;
+        public float PayloadDropDownwardThurst = 200;
 
         private Rigidbody2D _rigidbody;
         private bool _launched;
         private RocketManager _rocketManager;
         private BulletShooter _bulletShooter;
+        private PayloadDropper _payloadDropper;
         private Rotator _rotator;
 
         private void Start()
@@ -22,6 +24,7 @@ namespace GameFiles.Scripts
             _rigidbody.gravityScale = 0.5f; //todo make configurable
             _rocketManager = GetComponent<RocketManager>();
             _bulletShooter = GetComponent<BulletShooter>();
+            _payloadDropper = GetComponent<PayloadDropper>();
             _rotator = GetComponent<Rotator>();
         }
 
@@ -54,6 +57,13 @@ namespace GameFiles.Scripts
                 {
                     _rocketManager.UseBullet();
                     _bulletShooter.Shoot();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Q) && _rocketManager.CanDropPaylod())
+                {
+                    _rocketManager.UsePayload();
+                    _payloadDropper.Drop();
+                    _rigidbody.AddForce(-transform.up * PayloadDropDownwardThurst);
                 }
             }
         }

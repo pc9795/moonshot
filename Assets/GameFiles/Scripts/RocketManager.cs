@@ -8,18 +8,23 @@ namespace GameFiles.Scripts
         public float MaxHealth = 100;
         public int MaxBoosts = 3;
         public int MaxBullets = 10;
-        public float BoostCoolDownInSecs = 2;
+        public int MaxPayloads = 3;
+        public float BoostCoolDownInSecs = 1;
         public float BulletCoolDownInSecs = 1;
+        public float PayloadCoolDownInSecs = 1;
+
 
         private float _health;
         private CoolingDownEntity _boosts;
         private CoolingDownEntity _bullets;
+        private CoolingDownEntity _payloads;
 
         private void Awake()
         {
             _health = MaxHealth;
             _boosts = new CoolingDownEntity(MaxBoosts);
             _bullets = new CoolingDownEntity(MaxBullets);
+            _payloads = new CoolingDownEntity(MaxPayloads);
         }
 
         public void Die()
@@ -62,6 +67,22 @@ namespace GameFiles.Scripts
         private void StopBulletCoolDown()
         {
             _bullets.StopCoolDown();
+        }
+
+        public bool CanDropPaylod()
+        {
+            return _payloads.CanUse();
+        }
+
+        public void UsePayload()
+        {
+            _payloads.Use();
+            Invoke(nameof(StopPayloadCoolDown), PayloadCoolDownInSecs);
+        }
+
+        private void StopPayloadCoolDown()
+        {
+            _payloads.StopCoolDown();
         }
     }
 }

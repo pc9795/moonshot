@@ -1268,6 +1268,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: -8469453868934793865, guid: 05d49a2a208907545b77c53d5d1a91f1, type: 3}
+--- !u!114 &1331466470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331466463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89186e78c9f0344cbd2cbe684dddb5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Payload: {fileID: 3540866960565294846, guid: d9ccd93afde7b7048a5bc0ba2584831c, type: 3}
 --- !u!4 &1466547021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3008022484502063386, guid: 0d6a21f7814a0b141b7ef613c40b8a45,
@@ -1604,7 +1617,7 @@ PrefabInstance:
     - target: {fileID: 3008022484502063367, guid: 0d6a21f7814a0b141b7ef613c40b8a45,
         type: 3}
       propertyPath: BoostThrust
-      value: 800
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3008022484502063367, guid: 0d6a21f7814a0b141b7ef613c40b8a45,
         type: 3}
@@ -1614,7 +1627,12 @@ PrefabInstance:
     - target: {fileID: 3008022484502063367, guid: 0d6a21f7814a0b141b7ef613c40b8a45,
         type: 3}
       propertyPath: LaunchThurst
-      value: 500
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008022484502063367, guid: 0d6a21f7814a0b141b7ef613c40b8a45,
+        type: 3}
+      propertyPath: PayloadDropDownwardThurst
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3008022484502063385, guid: 0d6a21f7814a0b141b7ef613c40b8a45,
         type: 3}
