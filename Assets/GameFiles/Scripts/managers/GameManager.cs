@@ -33,5 +33,17 @@ namespace GameFiles.Scripts
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        public static void Quit()
+        {
+            Debug.Log("Quit!"); //todo remove
+            Application.Quit();
+        }
+
+        public static void NewGame()
+        {
+            Debug.Log("New Game!"); //todo remove
+            //todo implement
+        }
     }
 }
