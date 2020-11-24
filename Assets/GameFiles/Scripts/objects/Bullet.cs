@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using GameFiles.Scripts.managers;
+using UnityEngine;
 
-namespace GameFiles.Scripts
+namespace GameFiles.Scripts.objects
 {
     public class Bullet : MonoBehaviour
     {

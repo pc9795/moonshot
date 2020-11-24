@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameFiles.Scripts
+namespace GameFiles.Scripts.objects
 {
     public class BreakableAsteroid : MonoBehaviour
     {

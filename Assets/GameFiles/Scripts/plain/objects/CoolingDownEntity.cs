@@ -1,6 +1,6 @@
 ﻿using Boo.Lang.Runtime;
 
-namespace GameFiles.Scripts.beans
+namespace GameFiles.Scripts.plain.objects
 {
     public class CoolingDownEntity
     {

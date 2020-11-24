@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameFiles.Scripts.enums
+namespace GameFiles.Scripts.plain.objects
 {
     public class Tag : MonoBehaviour
     {

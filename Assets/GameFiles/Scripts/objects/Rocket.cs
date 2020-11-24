@@ -1,7 +1,9 @@
-﻿using GameFiles.Scripts.enums;
+﻿using GameFiles.Scripts.behaviours;
+using GameFiles.Scripts.managers;
+using GameFiles.Scripts.plain.objects;
 using UnityEngine;
 
-namespace GameFiles.Scripts
+namespace GameFiles.Scripts.objects
 {
     public class Rocket : MonoBehaviour
     {

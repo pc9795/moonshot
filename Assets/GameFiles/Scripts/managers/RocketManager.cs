@@ -1,7 +1,7 @@
-﻿using GameFiles.Scripts.beans;
+﻿using GameFiles.Scripts.plain.objects;
 using UnityEngine;
 
-namespace GameFiles.Scripts
+namespace GameFiles.Scripts.managers
 {
     public class RocketManager : MonoBehaviour
     {

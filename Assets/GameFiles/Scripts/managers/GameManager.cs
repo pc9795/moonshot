@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using GameFiles.Scripts.objects;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace GameFiles.Scripts
+namespace GameFiles.Scripts.managers
 {
     public class GameManager : MonoBehaviour
     {
@@ -43,6 +44,23 @@ namespace GameFiles.Scripts
         public static void NewGame()
         {
             Debug.Log("New Game!"); //todo remove
+            //todo implement
+        }
+
+
+        public static void Pause()
+        {
+            Time.timeScale = 0f;
+        }
+
+        public static void Resume()
+        {
+            Time.timeScale = 1f;
+        }
+
+        public static void RestartCurrLevel()
+        {
+            Debug.Log("Restarting current level1"); //todo remove
             //todo implement
         }
     }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameFiles.Scripts
+namespace GameFiles.Scripts.behaviours
 {
     public class PayloadDropper : MonoBehaviour
     {
