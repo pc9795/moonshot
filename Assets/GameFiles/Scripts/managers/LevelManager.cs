@@ -66,7 +66,7 @@ namespace GameFiles.Scripts.managers
         public GuiScreen GetStartingCurrScreenForCurrLevel()
         {
             if (_currLevelIndex != 0)
-                return _currLevelIndex == _levels.Count - 1 ? GuiScreen.GameOver : GuiScreen.InGame;
+                return _currLevelIndex == _levels.Count - 1 ? GuiScreen.GameCompletion : GuiScreen.InGame;
             if (_startScreenOpened) return GuiScreen.MainMenu;
             _startScreenOpened = true;
             return GuiScreen.Start;
