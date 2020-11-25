@@ -17,14 +17,12 @@ namespace GameFiles.Scripts.managers
         public GameObject QuitConfirmScreen;
 
         private bool _paused;
-        private GuiScreen _currScreen;
-        private GuiScreen _prevScreen;
+        public GuiScreen _currScreen;
+        public GuiScreen _prevScreen;
         private Dictionary<GuiScreen, GameObject> _screenEnumToGameObject;
 
-        private void Awake()
+        private void Start()
         {
-            _prevScreen = GuiScreen.InGame;
-            _currScreen = GuiScreen.Start;
             _screenEnumToGameObject = new Dictionary<GuiScreen, GameObject>()
             {
                 {GuiScreen.Start, StartScreen},
@@ -37,6 +35,12 @@ namespace GameFiles.Scripts.managers
                 {GuiScreen.ReturnToMainMenuConfirm, ReturnToMainMenuConfirmScreen},
                 {GuiScreen.QuitConfirm, QuitConfirmScreen}
             };
+            _prevScreen = LevelManager.Instance.GetStartingPrevScreenForCurrLevel();
+            _currScreen = LevelManager.Instance.GetStartingCurrScreenForCurrLevel();
+            if (_currScreen != GuiScreen.InGame)
+            {
+                _screenEnumToGameObject[_currScreen].SetActive(true);
+            }
         }
 
         private void Update()

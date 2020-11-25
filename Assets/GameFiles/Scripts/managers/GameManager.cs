@@ -61,5 +61,10 @@ namespace GameFiles.Scripts.managers
         {
             LevelManager.Instance.NextLevel();
         }
+
+        public static void OpenMainMenu()
+        {
+            LevelManager.Instance.OpenMainMenu();
+        }
     }
 }

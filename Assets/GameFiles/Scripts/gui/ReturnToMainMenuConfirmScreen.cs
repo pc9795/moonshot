@@ -16,7 +16,7 @@ namespace GameFiles.Scripts.gui
         // ReSharper disable once UnusedMember.Global
         public void Yes()
         {
-            _guiManager.NavigateTo(GuiScreen.MainMenu);
+            GameManager.OpenMainMenu();
         }
 
         // ReSharper disable once UnusedMember.Global

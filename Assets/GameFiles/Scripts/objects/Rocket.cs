@@ -77,14 +77,12 @@ namespace GameFiles.Scripts.objects
             if (other.CompareTag(Tag.Boundary))
             {
                 _rocketManager.Die();
-                GameManager.Pause();
                 _guiManager.NavigateTo(GuiScreen.GameOver);
                 return;
             }
 
             if (other.CompareTag(Tag.Moon))
             {
-                GameManager.Pause();
                 GameManager.NextLevel();
             }
         }

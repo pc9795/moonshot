@@ -23,6 +23,7 @@ namespace GameFiles.Scripts.gui
         public void Restart()
         {
             _guiManager.NavigateTo(GuiScreen.InGame);
+            Debug.Log("Current level reloaded!");
             GameManager.RestartCurrLevel();
         }
 
