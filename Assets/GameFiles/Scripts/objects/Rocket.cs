@@ -18,6 +18,7 @@ namespace GameFiles.Scripts.objects
         private BulletShooter _bulletShooter;
         private PayloadDropper _payloadDropper;
         private Rotator _rotator;
+        private GuiManager _guiManager;
 
         private void Start()
         {
@@ -28,6 +29,7 @@ namespace GameFiles.Scripts.objects
             _bulletShooter = GetComponent<BulletShooter>();
             _payloadDropper = GetComponent<PayloadDropper>();
             _rotator = GetComponent<Rotator>();
+            _guiManager = FindObjectOfType<GuiManager>();
         }
 
         private void Update()
@@ -75,14 +77,15 @@ namespace GameFiles.Scripts.objects
             if (other.CompareTag(Tag.Boundary))
             {
                 _rocketManager.Die();
-                GameManager.Restart(); // todo remove
+                GameManager.Pause();
+                _guiManager.NavigateTo(GuiScreen.GameOver);
                 return;
             }
 
             if (other.CompareTag(Tag.Moon))
             {
-                Debug.Log("You Won!"); // todo remove
-                GameManager.Restart(); // todo remove
+                GameManager.Pause();
+                GameManager.NextLevel();
             }
         }
     }

@@ -1,15 +1,10 @@
-﻿using GameFiles.Scripts.objects;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 namespace GameFiles.Scripts.managers
 {
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-
-        public Rocket Player;
-        public GameObject Boundary;
 
         private void Awake()
         {
@@ -30,14 +25,8 @@ namespace GameFiles.Scripts.managers
             }
         }
 
-        public static void Restart()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-
         public static void Quit()
         {
-            Debug.Log("Quit!"); //todo remove
             Application.Quit();
         }
 
@@ -46,13 +35,11 @@ namespace GameFiles.Scripts.managers
             Debug.Log("Continue!"); //todo remove
             //todo implement
         }
-        
+
         public static void NewGame()
         {
-            Debug.Log("New Game!"); //todo remove
-            //todo implement
+            LevelManager.Instance.LoadFirstLevel();
         }
-
 
         public static void Pause()
         {
@@ -66,8 +53,12 @@ namespace GameFiles.Scripts.managers
 
         public static void RestartCurrLevel()
         {
-            Debug.Log("Restarting current level1"); //todo remove
-            //todo implement
+            LevelManager.Instance.Reload();
+        }
+
+        public static void NextLevel()
+        {
+            LevelManager.Instance.NextLevel();
         }
     }
 }
