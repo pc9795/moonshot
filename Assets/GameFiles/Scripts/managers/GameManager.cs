@@ -27,6 +27,7 @@ namespace GameFiles.Scripts.managers
 
         public static void Quit()
         {
+            Debug.Log("Quit!");
             Application.Quit();
         }
 

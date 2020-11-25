@@ -31,7 +31,7 @@ namespace GameFiles.Scripts.managers
 
         private void Start()
         {
-            _levels = new List<string> {"Start", "Level 1", "Level 2"};
+            _levels = new List<string> {"GameFiles/Scenes/Begin", "GameFiles/Scenes/Level 1", "GameFiles/Scenes/Level 2"};
             _currLevelIndex = 0;
         }
 

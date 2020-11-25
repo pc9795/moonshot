@@ -42,7 +42,7 @@ namespace GameFiles.Scripts.gui
         // ReSharper disable once UnusedMember.Global
         public void Quit()
         {
-            GameManager.Quit();
+            _guiManager.NavigateTo(GuiScreen.QuitConfirm);
         }
     }
 }
