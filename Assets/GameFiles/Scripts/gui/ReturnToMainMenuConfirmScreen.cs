@@ -1,19 +1,28 @@
-﻿using UnityEngine;
+﻿using GameFiles.Scripts.managers;
+using GameFiles.Scripts.plain.objects;
+using UnityEngine;
 
 namespace GameFiles.Scripts.gui
 {
     public class ReturnToMainMenuConfirmScreen : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        private GuiManager _guiManager;
+
+        private void Start()
         {
-        
+            _guiManager = FindObjectOfType<GuiManager>();
         }
 
-        // Update is called once per frame
-        void Update()
+        // ReSharper disable once UnusedMember.Global
+        public void Yes()
         {
-        
+            _guiManager.NavigateTo(GuiScreen.MainMenu);
+        }
+
+        // ReSharper disable once UnusedMember.Global
+        public void No()
+        {
+            _guiManager.NavigateToPrevScreen();
         }
     }
 }
