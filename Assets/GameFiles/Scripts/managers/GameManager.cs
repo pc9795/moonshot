@@ -41,6 +41,12 @@ namespace GameFiles.Scripts.managers
             Application.Quit();
         }
 
+        public static void ContinueGame()
+        {
+            Debug.Log("Continue!"); //todo remove
+            //todo implement
+        }
+        
         public static void NewGame()
         {
             Debug.Log("New Game!"); //todo remove

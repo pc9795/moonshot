@@ -1,40 +1,42 @@
 ﻿using GameFiles.Scripts.managers;
+using GameFiles.Scripts.plain.objects;
 using UnityEngine;
 
 namespace GameFiles.Scripts.gui
 {
     public class MainMenuScreen : MonoBehaviour
     {
-        public GameObject ThisScreen;
-        public GameObject ControlsScreen;
-        public GameObject HelpScreen;
+        private GuiManager _guiManager;
+
+        private void Start()
+        {
+            _guiManager = FindObjectOfType<GuiManager>();
+        }
 
         // ReSharper disable once UnusedMember.Global
         public void Continue()
         {
-            Debug.Log("Continue!"); //todo remove
-            //todo implement
+            _guiManager.NavigateTo(GuiScreen.InGame);
+            GameManager.ContinueGame();
         }
 
         // ReSharper disable once UnusedMember.Global
         public void NewGame()
         {
-            ThisScreen.SetActive(false);
+            _guiManager.NavigateTo(GuiScreen.InGame);
             GameManager.NewGame();
         }
 
         // ReSharper disable once UnusedMember.Global
         public void Controls()
         {
-            ThisScreen.SetActive(false);
-            ControlsScreen.SetActive(true);
+            _guiManager.NavigateTo(GuiScreen.Controls);
         }
 
         // ReSharper disable once UnusedMember.Global
         public void Help()
         {
-            ThisScreen.SetActive(false);
-            HelpScreen.SetActive(true);
+            _guiManager.NavigateTo(GuiScreen.Help);
         }
 
         // ReSharper disable once UnusedMember.Global

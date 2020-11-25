@@ -90,10 +90,5 @@ namespace GameFiles.Scripts.managers
             _prevScreen = _currScreen;
             _currScreen = temp;
         }
-
-        public static void Quit()
-        {
-            GameManager.Quit();
-        }
     }
 }

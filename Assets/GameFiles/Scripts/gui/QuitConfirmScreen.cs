@@ -15,7 +15,7 @@ namespace GameFiles.Scripts.gui
         // ReSharper disable once UnusedMember.Global
         public void Yes()
         {
-            GuiManager.Quit();
+            GameManager.Quit();
         }
 
         // ReSharper disable once UnusedMember.Global
