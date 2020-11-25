@@ -1,18 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using GameFiles.Scripts.managers;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+namespace GameFiles.Scripts.gui
 {
-    // Start is called before the first frame update
-    void Start()
+    public class QuitConfirmScreen : MonoBehaviour
     {
-        
-    }
+        private GuiManager _guiManager;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            _guiManager = FindObjectOfType<GuiManager>();
+        }
+
+        // ReSharper disable once UnusedMember.Global
+        public void Yes()
+        {
+            GuiManager.Quit();
+        }
+
+        // ReSharper disable once UnusedMember.Global
+        public void No()
+        {
+            _guiManager.NavigateToPrevScreen();
+        }
     }
 }

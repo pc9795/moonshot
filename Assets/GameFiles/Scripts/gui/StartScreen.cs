@@ -6,10 +6,6 @@ namespace GameFiles.Scripts.gui
 {
     public class StartScreen : MonoBehaviour
     {
-        public GameObject MainMenuScreen;
-        public GameObject ThisScreen;
-        public GameObject QuitConfirmScreen;
-
         private GuiManager _guiManager;
 
         private void Start()
@@ -20,17 +16,13 @@ namespace GameFiles.Scripts.gui
         // ReSharper disable once UnusedMember.Global
         public void StartGame()
         {
-            ThisScreen.SetActive(false);
-            MainMenuScreen.SetActive(true);
-            _guiManager.SetCurrScreen(GuiScreen.MainMenu);
+            _guiManager.NavigateTo(GuiScreen.MainMenu);
         }
 
         // ReSharper disable once UnusedMember.Global
         public void Quit()
         {
-            ThisScreen.SetActive(false);
-            QuitConfirmScreen.SetActive(true);
-            _guiManager.SetCurrScreen(GuiScreen.QuitConfirm);
+            _guiManager.NavigateTo(GuiScreen.QuitConfirm);
         }
     }
 }
