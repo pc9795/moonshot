@@ -41,21 +41,26 @@ namespace GameFiles.Scripts.managers
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && EscAllowed())
             {
                 if (!_paused)
                 {
-                    PauseScreen.SetActive(true);
+                    NavigateTo(GuiScreen.Pause);
                     GameManager.Pause();
                 }
                 else
                 {
-                    PauseScreen.SetActive(false);
+                    NavigateTo(GuiScreen.InGame);
                     GameManager.Resume();
                 }
 
                 _paused = !_paused;
             }
+        }
+
+        private bool EscAllowed()
+        {
+            return _currScreen == GuiScreen.InGame || _currScreen == GuiScreen.Pause;
         }
 
         public void NavigateTo(GuiScreen screen)
