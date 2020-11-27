@@ -11,6 +11,7 @@ namespace GameFiles.Scripts.objects
         public float BoostThrust = 800;
         public float TurnSenstivityAtLaunch = 0.3f;
         public float PayloadDropDownwardThurst = 200;
+        public float GravityScale = 0.5f;
 
         private Rigidbody2D _rigidbody;
         private bool _launched;
@@ -24,7 +25,7 @@ namespace GameFiles.Scripts.objects
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _rigidbody.bodyType = RigidbodyType2D.Static;
-            _rigidbody.gravityScale = 0.5f; //todo make configurable
+            _rigidbody.gravityScale = GravityScale;
             _rocketManager = GetComponent<RocketManager>();
             _bulletShooter = GetComponent<BulletShooter>();
             _payloadDropper = GetComponent<PayloadDropper>();
@@ -77,13 +78,17 @@ namespace GameFiles.Scripts.objects
             if (other.CompareTag(Tag.Boundary))
             {
                 _rocketManager.Die();
-                _guiManager.NavigateTo(GuiScreen.GameOver);
+                GameManager.RestartCurrLevel(); // todo remove
+                // todo uncomment
+                // _guiManager.NavigateTo(GuiScreen.GameOver); 
                 return;
             }
 
             if (other.CompareTag(Tag.Moon))
             {
-                GameManager.NextLevel();
+                GameManager.RestartCurrLevel(); // todo remove
+                // todo uncomment
+                // GameManager.NextLevel();
             }
         }
     }

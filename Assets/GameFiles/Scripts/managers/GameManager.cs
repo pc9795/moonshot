@@ -33,8 +33,7 @@ namespace GameFiles.Scripts.managers
 
         public static void ContinueGame()
         {
-            Debug.Log("Continue!"); //todo remove
-            //todo implement
+            Debug.Log("Continue!");
         }
 
         public static void NewGame()

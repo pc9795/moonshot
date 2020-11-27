@@ -18,7 +18,7 @@ namespace GameFiles.Scripts.managers
         {
             Init();
             _levels = new List<string> {"GameFiles/Scenes/Begin", "GameFiles/Scenes/Level 1", "GameFiles/Scenes/End"};
-            _currLevelIndex = 0;
+            _currLevelIndex = 1; //todo change to 0
             _startScreenOpened = false;
         }
 
