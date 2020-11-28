@@ -6,5 +6,6 @@ namespace GameFiles.Scripts.plain.objects
     {
         public const string Boundary = "boundary";
         public const string Moon = "moon";
+        public const string BouncyAsteroid = "bouncy-asteroid";
     }
 }

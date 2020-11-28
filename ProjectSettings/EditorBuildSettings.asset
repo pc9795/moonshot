@@ -9,12 +9,39 @@ EditorBuildSettings:
     path: Assets/GameFiles/Scenes/Begin.unity
     guid: 72b72350d2559eb419af1f148740e149
   - enabled: 1
+    path: Assets/GameFiles/Scenes/Level 1.unity
+    guid: 30c7d6227d9355e48bac7758c7825a23
+  - enabled: 1
+    path: Assets/GameFiles/Scenes/Level 2.unity
+    guid: bc57d1dfc891bea48ae3b29379cf34b3
+  - enabled: 1
+    path: Assets/GameFiles/Scenes/Level 3.unity
+    guid: c891dd21f5cae7c4a97695439739cf67
+  - enabled: 1
+    path: Assets/GameFiles/Scenes/Level 4.unity
+    guid: 56000ea6a8332554ea0be559c9dacb1c
+  - enabled: 1
     path: Assets/GameFiles/Scenes/Level 5.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/GameFiles/Scenes/Level 2.unity
-    guid: fd8a3e4b146ae6645815fb8c6bd731a4
+    path: Assets/GameFiles/Scenes/Level 6.unity
+    guid: 14f03f88348328b4b9a6a8a632aff9cb
+  - enabled: 1
+    path: Assets/GameFiles/Scenes/Level 7.unity
+    guid: f4d0fcda9dd6efd4f9980f2a22a8479d
+  - enabled: 1
+    path: Assets/GameFiles/Scenes/Level 8.unity
+    guid: 45be9fa67a879324991afefbe7687f00
+  - enabled: 1
+    path: Assets/GameFiles/Scenes/Level 9.unity
+    guid: 3a07a809cfde52f4cbe01683cb508662
+  - enabled: 1
+    path: Assets/GameFiles/Scenes/Level 10.unity
+    guid: 41d485396544e05479ca70105005e191
   - enabled: 1
     path: Assets/GameFiles/Scenes/End.unity
     guid: 8dadb2757ce3cb7459fa5a8c6347c35d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

@@ -17,8 +17,16 @@ namespace GameFiles.Scripts.managers
         private void Awake()
         {
             Init();
-            _levels = new List<string> {"GameFiles/Scenes/Begin", "GameFiles/Scenes/Level 1", "GameFiles/Scenes/End"};
-            _currLevelIndex = 1; //todo change to 0
+            _levels = new List<string>
+            {
+                "GameFiles/Scenes/Begin",
+                "GameFiles/Scenes/Level 1",
+                "GameFiles/Scenes/Level 2",
+                "GameFiles/Scenes/Level 3",
+                "GameFiles/Scenes/Level 4",
+                "GameFiles/Scenes/End"
+            };
+            _currLevelIndex = GameManager.Instance.DevMode ? GameManager.Instance.DevModeCurrLevel : 0;
             _startScreenOpened = false;
         }
 

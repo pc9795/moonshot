@@ -77,18 +77,49 @@ namespace GameFiles.Scripts.objects
         {
             if (other.CompareTag(Tag.Boundary))
             {
-                _rocketManager.Die();
-                GameManager.RestartCurrLevel(); // todo remove
-                // todo uncomment
-                // _guiManager.NavigateTo(GuiScreen.GameOver); 
-                return;
+                LoseLevel();
             }
+        }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
             if (other.CompareTag(Tag.Moon))
             {
-                GameManager.RestartCurrLevel(); // todo remove
-                // todo uncomment
-                // GameManager.NextLevel();
+                WinLevel();
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            BreakableAsteroid breakableAsteroid = other.collider.GetComponent<BreakableAsteroid>();
+            if (breakableAsteroid != null)
+            {
+                LoseLevel();
+            }
+        }
+
+        private void LoseLevel()
+        {
+            _rocketManager.Die();
+            if (GameManager.Instance.DevMode)
+            {
+                GameManager.RestartCurrLevel();
+            }
+            else
+            {
+                _guiManager.NavigateTo(GuiScreen.GameOver);
+            }
+        }
+
+        private void WinLevel()
+        {
+            if (GameManager.Instance.DevMode)
+            {
+                GameManager.RestartCurrLevel();
+            }
+            else
+            {
+                GameManager.NextLevel();
             }
         }
     }

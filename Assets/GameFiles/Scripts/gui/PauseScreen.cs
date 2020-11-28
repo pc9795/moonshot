@@ -17,6 +17,7 @@ namespace GameFiles.Scripts.gui
         public void Continue()
         {
             _guiManager.NavigateTo(GuiScreen.InGame);
+            GameManager.Resume();
         }
 
         // ReSharper disable once UnusedMember.Global

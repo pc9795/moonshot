@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using GameFiles.Scripts.plain.objects;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GameFiles.Scripts.managers
 {
@@ -15,12 +16,16 @@ namespace GameFiles.Scripts.managers
         public GameObject GameOverScreen;
         public GameObject ReturnToMainMenuConfirmScreen;
         public GameObject QuitConfirmScreen;
+        public GameObject Hud;
+        public GameObject BoostsHud;
+        public GameObject DropshipsHud;
+        public GameObject BulletsHud;
 
         private bool _paused;
-        public GuiScreen _currScreen;
-        public GuiScreen _prevScreen;
+        private GuiScreen _currScreen;
+        private GuiScreen _prevScreen;
         private Dictionary<GuiScreen, GameObject> _screenEnumToGameObject;
-
+        
         private void Start()
         {
             _screenEnumToGameObject = new Dictionary<GuiScreen, GameObject>()
@@ -60,6 +65,8 @@ namespace GameFiles.Scripts.managers
 
                 _paused = !_paused;
             }
+
+            Hud.SetActive(_currScreen == GuiScreen.InGame);
         }
 
         private bool EscAllowed()
@@ -98,6 +105,36 @@ namespace GameFiles.Scripts.managers
             GuiScreen temp = _prevScreen;
             _prevScreen = _currScreen;
             _currScreen = temp;
+        }
+
+        public void UpdateBoostsInHud(int boosts)
+        {
+            BoostsHud.GetComponent<Text>().text = "Boosts: " + boosts;
+        }
+
+        public void ToogleBoostsInHud(bool enable)
+        {
+            BoostsHud.SetActive(enable);
+        }
+
+        public void UpdateDropshipsInHud(int dropships)
+        {
+            DropshipsHud.GetComponent<Text>().text = "Dropships: " + dropships;
+        }
+
+        public void ToogleDropshipsInHud(bool enable)
+        {
+            DropshipsHud.SetActive(enable);
+        }
+
+        public void UpdateBulletsInHud(int bullets)
+        {
+            BulletsHud.GetComponent<Text>().text = "Bullets: " + bullets;
+        }
+
+        public void ToogleBulletsInHud(bool enable)
+        {
+            BulletsHud.SetActive(enable);
         }
     }
 }

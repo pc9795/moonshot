@@ -7,6 +7,7 @@ TagManager:
   - boundary
   - moon
   - breakable-asteroid
+  - bouncy-asteroid
   layers:
   - Default
   - TransparentFX

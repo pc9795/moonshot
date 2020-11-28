@@ -18,13 +18,18 @@ namespace GameFiles.Scripts.managers
         private CoolingDownEntity _boosts;
         private CoolingDownEntity _bullets;
         private CoolingDownEntity _payloads;
+        private GuiManager _guiManager;
 
-        private void Awake()
+        private void Start()
         {
             _health = MaxHealth;
             _boosts = new CoolingDownEntity(MaxBoosts);
             _bullets = new CoolingDownEntity(MaxBullets);
             _payloads = new CoolingDownEntity(MaxPayloads);
+            _guiManager = FindObjectOfType<GuiManager>();
+            _guiManager.UpdateBoostsInHud(_boosts.GetQuantity());
+            _guiManager.UpdateDropshipsInHud(_payloads.GetQuantity());
+            _guiManager.UpdateBulletsInHud(_bullets.GetQuantity());
         }
 
         public void Die()
@@ -45,12 +50,15 @@ namespace GameFiles.Scripts.managers
         public void UseBoost()
         {
             _boosts.Use();
+            _guiManager.ToogleBoostsInHud(false);
             Invoke(nameof(StopBoostCoolDown), BoostCoolDownInSecs);
         }
 
         private void StopBoostCoolDown()
         {
             _boosts.StopCoolDown();
+            _guiManager.UpdateBoostsInHud(_boosts.GetQuantity());
+            _guiManager.ToogleBoostsInHud(true);
         }
 
         public bool CanShoot()
@@ -61,12 +69,15 @@ namespace GameFiles.Scripts.managers
         public void UseBullet()
         {
             _bullets.Use();
+            _guiManager.ToogleBulletsInHud(false);
             Invoke(nameof(StopBulletCoolDown), BulletCoolDownInSecs);
         }
 
         private void StopBulletCoolDown()
         {
             _bullets.StopCoolDown();
+            _guiManager.UpdateBulletsInHud(_bullets.GetQuantity());
+            _guiManager.ToogleBulletsInHud(true);
         }
 
         public bool CanDropPaylod()
@@ -77,12 +88,15 @@ namespace GameFiles.Scripts.managers
         public void UsePayload()
         {
             _payloads.Use();
+            _guiManager.ToogleDropshipsInHud(false);
             Invoke(nameof(StopPayloadCoolDown), PayloadCoolDownInSecs);
         }
 
         private void StopPayloadCoolDown()
         {
             _payloads.StopCoolDown();
+            _guiManager.UpdateDropshipsInHud(_payloads.GetQuantity());
+            _guiManager.ToogleDropshipsInHud(true);
         }
     }
 }

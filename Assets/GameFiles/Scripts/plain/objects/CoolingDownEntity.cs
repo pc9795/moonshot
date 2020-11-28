@@ -32,5 +32,10 @@ namespace GameFiles.Scripts.plain.objects
         {
             _coolingDown = false;
         }
+
+        public int GetQuantity()
+        {
+            return _quantity;
+        }
     }
 }
