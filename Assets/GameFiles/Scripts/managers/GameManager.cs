@@ -4,9 +4,6 @@ namespace GameFiles.Scripts.managers
 {
     public class GameManager : MonoBehaviour
     {
-        public bool DevMode = false;
-        public int DevModeCurrLevel = 0;
-
         public static GameManager Instance;
 
         private void Awake()

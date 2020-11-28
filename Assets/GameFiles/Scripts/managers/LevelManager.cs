@@ -8,6 +8,9 @@ namespace GameFiles.Scripts.managers
     public class LevelManager : MonoBehaviour
     {
         public static LevelManager Instance;
+        
+        public bool DevMode;
+        public int DevModeCurrLevel;
 
         private List<string> _levels;
         private int _currLevelIndex;
@@ -26,8 +29,8 @@ namespace GameFiles.Scripts.managers
                 "GameFiles/Scenes/Level 4",
                 "GameFiles/Scenes/End"
             };
-            _currLevelIndex = GameManager.Instance.DevMode ? GameManager.Instance.DevModeCurrLevel : 0;
             _startScreenOpened = false;
+            _currLevelIndex = DevMode ? DevModeCurrLevel : 0;
         }
 
         private void Init()

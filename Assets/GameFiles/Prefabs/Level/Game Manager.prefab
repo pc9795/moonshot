@@ -45,8 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e0e8a4b173c664cb6643f6a2bdef67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DevMode: 0
-  DevModeCurrLevel: 0
 --- !u!114 &8452229907424588929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,3 +71,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642bb64d0e65a8a4da529374501a0820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DevMode: 0
+  DevModeCurrLevel: 0

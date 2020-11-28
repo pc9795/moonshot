@@ -101,7 +101,7 @@ namespace GameFiles.Scripts.objects
         private void LoseLevel()
         {
             _rocketManager.Die();
-            if (GameManager.Instance.DevMode)
+            if (LevelManager.Instance.DevMode)
             {
                 GameManager.RestartCurrLevel();
             }
@@ -113,7 +113,7 @@ namespace GameFiles.Scripts.objects
 
         private void WinLevel()
         {
-            if (GameManager.Instance.DevMode)
+            if (LevelManager.Instance.DevMode)
             {
                 GameManager.RestartCurrLevel();
             }
