@@ -18,6 +18,7 @@ namespace GameFiles.Scripts.objects
         private void Update()
         {
             transform.position = Holder.transform.position;
+            transform.rotation = Holder.transform.rotation;
         }
 
         private void OnCollisionEnter2D(Collision2D other)

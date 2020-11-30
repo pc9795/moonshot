@@ -50,7 +50,7 @@ namespace GameFiles.Scripts.managers
         public void UseBoost()
         {
             _boosts.Use();
-            _guiManager.ToogleBoostsInHud(false);
+            _guiManager.MakeBoostsNotAvailableInHud();
             Invoke(nameof(StopBoostCoolDown), BoostCoolDownInSecs);
         }
 
@@ -58,7 +58,6 @@ namespace GameFiles.Scripts.managers
         {
             _boosts.StopCoolDown();
             _guiManager.UpdateBoostsInHud(_boosts.GetQuantity());
-            _guiManager.ToogleBoostsInHud(true);
         }
 
         public bool CanShoot()
@@ -69,7 +68,7 @@ namespace GameFiles.Scripts.managers
         public void UseBullet()
         {
             _bullets.Use();
-            _guiManager.ToogleBulletsInHud(false);
+            _guiManager.MakeBulletsNotAvailableInHud();
             Invoke(nameof(StopBulletCoolDown), BulletCoolDownInSecs);
         }
 
@@ -77,7 +76,6 @@ namespace GameFiles.Scripts.managers
         {
             _bullets.StopCoolDown();
             _guiManager.UpdateBulletsInHud(_bullets.GetQuantity());
-            _guiManager.ToogleBulletsInHud(true);
         }
 
         public bool CanDropPaylod()
@@ -88,7 +86,7 @@ namespace GameFiles.Scripts.managers
         public void UsePayload()
         {
             _payloads.Use();
-            _guiManager.ToogleDropshipsInHud(false);
+            _guiManager.MakeDropshipsNotAvailableInHud();
             Invoke(nameof(StopPayloadCoolDown), PayloadCoolDownInSecs);
         }
 
@@ -96,7 +94,6 @@ namespace GameFiles.Scripts.managers
         {
             _payloads.StopCoolDown();
             _guiManager.UpdateDropshipsInHud(_payloads.GetQuantity());
-            _guiManager.ToogleDropshipsInHud(true);
         }
     }
 }

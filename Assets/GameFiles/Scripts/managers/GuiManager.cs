@@ -25,7 +25,7 @@ namespace GameFiles.Scripts.managers
         private GuiScreen _currScreen;
         private GuiScreen _prevScreen;
         private Dictionary<GuiScreen, GameObject> _screenEnumToGameObject;
-        
+
         private void Start()
         {
             _screenEnumToGameObject = new Dictionary<GuiScreen, GameObject>()
@@ -36,7 +36,7 @@ namespace GameFiles.Scripts.managers
                 {GuiScreen.Controls, ControlsScreen},
                 {GuiScreen.Pause, PauseScreen},
                 {GuiScreen.GameCompletion, GameCompletionScreen},
-                {GuiScreen.GameOver, GameOverScreen},    
+                {GuiScreen.GameOver, GameOverScreen},
                 {GuiScreen.ReturnToMainMenuConfirm, ReturnToMainMenuConfirmScreen},
                 {GuiScreen.QuitConfirm, QuitConfirmScreen}
             };
@@ -109,32 +109,32 @@ namespace GameFiles.Scripts.managers
 
         public void UpdateBoostsInHud(int boosts)
         {
-            BoostsHud.GetComponent<Text>().text = "Boosts: " + boosts;
+            BoostsHud.GetComponentInChildren<Text>().text = boosts.ToString();
         }
 
-        public void ToogleBoostsInHud(bool enable)
+        public void MakeBoostsNotAvailableInHud()
         {
-            BoostsHud.SetActive(enable);
+            BoostsHud.GetComponentInChildren<Text>().text = "Recharging...";
         }
 
         public void UpdateDropshipsInHud(int dropships)
         {
-            DropshipsHud.GetComponent<Text>().text = "Dropships: " + dropships;
+            DropshipsHud.GetComponentInChildren<Text>().text = dropships.ToString();
         }
 
-        public void ToogleDropshipsInHud(bool enable)
+        public void MakeDropshipsNotAvailableInHud()
         {
-            DropshipsHud.SetActive(enable);
+            DropshipsHud.GetComponentInChildren<Text>().text = "Recharging...";
         }
 
         public void UpdateBulletsInHud(int bullets)
         {
-            BulletsHud.GetComponent<Text>().text = "Bullets: " + bullets;
+            BulletsHud.GetComponentInChildren<Text>().text = bullets.ToString();
         }
 
-        public void ToogleBulletsInHud(bool enable)
+        public void MakeBulletsNotAvailableInHud()
         {
-            BulletsHud.SetActive(enable);
+            BulletsHud.GetComponentInChildren<Text>().text = "Recharging...";
         }
     }
 }
