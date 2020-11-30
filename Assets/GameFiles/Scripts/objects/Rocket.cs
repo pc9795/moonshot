@@ -130,5 +130,10 @@ namespace GameFiles.Scripts.objects
                 _guiManager.NavigateTo(GuiScreen.GameOver);
             }
         }
+
+        public bool IsLaunched()
+        {
+            return _launched;
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace GameFiles.Scripts.managers
         public GameObject BoostsHud;
         public GameObject DropshipsHud;
         public GameObject BulletsHud;
-
+        
         private bool _paused;
         private GuiScreen _currScreen;
         private GuiScreen _prevScreen;

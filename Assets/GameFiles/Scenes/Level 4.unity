@@ -201,6 +201,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 140561993}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &140561995 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3092242863984664486, guid: 7b5d319f3fff549498891d394b56ae65,
+    type: 3}
+  m_PrefabInstance: {fileID: 140561993}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4ea16260cb2cb4eaca4877d583676f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &471126124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -347,8 +359,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5517925484286002670, guid: e0bf3179e87b16c4a9e9d6ab24451c72,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517925484286002670, guid: e0bf3179e87b16c4a9e9d6ab24451c72,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0bf3179e87b16c4a9e9d6ab24451c72, type: 3}
+--- !u!224 &580335669 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1997607093323659094, guid: e0bf3179e87b16c4a9e9d6ab24451c72,
+    type: 3}
+  m_PrefabInstance: {fileID: 580335668}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &591206574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8500642426383028508, guid: dac76fa54e7bc144eae18b8ffef43d9e,
@@ -427,6 +455,11 @@ PrefabInstance:
       propertyPath: ToFollow
       value: 
       objectReference: {fileID: 140561994}
+    - target: {fileID: 2639514906525604046, guid: ed6ba29d2cafb1d44ae43110cce1c918,
+        type: 3}
+      propertyPath: Rocket
+      value: 
+      objectReference: {fileID: 140561995}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed6ba29d2cafb1d44ae43110cce1c918, type: 3}
 --- !u!1001 &723819642
@@ -529,6 +562,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 723819642}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &724738425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724738426}
+  - component: {fileID: 724738428}
+  - component: {fileID: 724738427}
+  m_Layer: 5
+  m_Name: Tutorial text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &724738426
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724738425}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 580335669}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 250.00003, y: 120.00003}
+  m_SizeDelta: {x: 400, y: 140}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &724738427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724738425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7647059, g: 0.2901961, b: 0.21176471, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 79adf22fdf8e09e42863ff47f779f6ac, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Use <Q> to release dropships to control your speed mid-air. Remember timing
+    is the key.
+--- !u!222 &724738428
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724738425}
+  m_CullTransparentMesh: 0
 --- !u!1001 &726591321
 PrefabInstance:
   m_ObjectHideFlags: 0

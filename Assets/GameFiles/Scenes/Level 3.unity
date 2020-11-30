@@ -451,6 +451,11 @@ PrefabInstance:
       propertyPath: ToFollow
       value: 
       objectReference: {fileID: 1918162910}
+    - target: {fileID: 2639514906525604046, guid: ed6ba29d2cafb1d44ae43110cce1c918,
+        type: 3}
+      propertyPath: Rocket
+      value: 
+      objectReference: {fileID: 1918162911}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed6ba29d2cafb1d44ae43110cce1c918, type: 3}
 --- !u!1001 &757623532
@@ -1180,6 +1185,89 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a429d3a8b2870a84aaa845dac03e19b2, type: 3}
+--- !u!1 &1744777625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1744777626}
+  - component: {fileID: 1744777628}
+  - component: {fileID: 1744777627}
+  m_Layer: 5
+  m_Name: Tutorial text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1744777626
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744777625}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1860080145}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 250.00005, y: 120.000015}
+  m_SizeDelta: {x: 400, y: 140}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1744777627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744777625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7647059, g: 0.2901961, b: 0.21176471, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 79adf22fdf8e09e42863ff47f779f6ac, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Land on asteroids to get a bounce. '
+--- !u!222 &1744777628
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744777625}
+  m_CullTransparentMesh: 0
+--- !u!224 &1860080145 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1997607093323659094, guid: e0bf3179e87b16c4a9e9d6ab24451c72,
+    type: 3}
+  m_PrefabInstance: {fileID: 805373965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1918162909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1260,6 +1348,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1918162909}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1918162911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3092242863984664486, guid: 7b5d319f3fff549498891d394b56ae65,
+    type: 3}
+  m_PrefabInstance: {fileID: 1918162909}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4ea16260cb2cb4eaca4877d583676f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1977135724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8500642426383028508, guid: dac76fa54e7bc144eae18b8ffef43d9e,
