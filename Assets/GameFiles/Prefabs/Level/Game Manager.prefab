@@ -124,3 +124,45 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+  - Name: RocketBlast
+    Clip: {fileID: 8300000, guid: e77586785b699174ebbf6420260e56c9, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: AsteroidBlast
+    Clip: {fileID: 8300000, guid: b02315d3e44584348b0e23b198053c9f, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Bounce
+    Clip: {fileID: 8300000, guid: 194749166ab2c1547ba8a885de1f636e, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: ReachMoon
+    Clip: {fileID: 8300000, guid: dc6af43ec55504a4bb8163782fde2503, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: GameOver
+    Clip: {fileID: 8300000, guid: 2e7d36e154bdf8f40b907a6224fd7db3, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: GameCompletion
+    Clip: {fileID: 8300000, guid: ad403fe5cb1141c4db962f01954ad170, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: InGame
+    Clip: {fileID: 8300000, guid: 2c7fe90f15de7fa469ff665c08d8acb4, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}

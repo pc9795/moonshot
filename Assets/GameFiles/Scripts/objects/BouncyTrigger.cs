@@ -1,4 +1,5 @@
-﻿using GameFiles.Scripts.plain.objects;
+﻿using GameFiles.Scripts.managers;
+using GameFiles.Scripts.plain.objects;
 using UnityEngine;
 
 namespace GameFiles.Scripts.objects
@@ -25,7 +26,7 @@ namespace GameFiles.Scripts.objects
         {
             if (other.collider.CompareTag(Tag.BouncyAsteroid))
             {
-                Debug.Log("Trigger touched!");
+                AudioManager.Instance.Play(AudioTrack.Bounce);
                 _rocket.GetComponent<Rigidbody2D>().AddForce(_rocket.transform.up * TriggerThrust);
             }
         }

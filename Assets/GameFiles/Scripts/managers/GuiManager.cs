@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Boo.Lang.Runtime;
 using GameFiles.Scripts.plain.objects;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ namespace GameFiles.Scripts.managers
         public GameObject GameOverScreen;
         public GameObject ReturnToMainMenuConfirmScreen;
         public GameObject QuitConfirmScreen;
+        public GameObject LevelCompleteScreen;
         public GameObject Hud;
         public GameObject BoostsHud;
         public GameObject DropshipsHud;
@@ -38,7 +40,8 @@ namespace GameFiles.Scripts.managers
                 {GuiScreen.GameCompletion, GameCompletionScreen},
                 {GuiScreen.GameOver, GameOverScreen},
                 {GuiScreen.ReturnToMainMenuConfirm, ReturnToMainMenuConfirmScreen},
-                {GuiScreen.QuitConfirm, QuitConfirmScreen}
+                {GuiScreen.QuitConfirm, QuitConfirmScreen},
+                {GuiScreen.LevelComplete, LevelCompleteScreen}
             };
             _prevScreen = LevelManager.Instance.GetStartingPrevScreenForCurrLevel();
             _currScreen = LevelManager.Instance.GetStartingCurrScreenForCurrLevel();
@@ -46,6 +49,8 @@ namespace GameFiles.Scripts.managers
             {
                 _screenEnumToGameObject[_currScreen].SetActive(true);
             }
+
+            PlayMusic();
         }
 
         private void Update()
@@ -88,6 +93,7 @@ namespace GameFiles.Scripts.managers
             }
 
             _currScreen = screen;
+            PlayMusic();
         }
 
         public void NavigateToPrevScreen()
@@ -105,6 +111,45 @@ namespace GameFiles.Scripts.managers
             GuiScreen temp = _prevScreen;
             _prevScreen = _currScreen;
             _currScreen = temp;
+            PlayMusic();
+        }
+
+        private void PlayMusic()
+        {
+            var prevAudioTrack = GetAudioTrackFromScreen(_prevScreen);
+            var currAudioTrack = GetAudioTrackFromScreen(_currScreen);
+            if (prevAudioTrack.Equals(currAudioTrack))
+            {
+                return;
+            }
+
+            AudioManager.Instance.Stop(prevAudioTrack);
+            AudioManager.Instance.Play(currAudioTrack);
+        }
+
+        private static string GetAudioTrackFromScreen(GuiScreen screen)
+        {
+            switch (screen)
+            {
+                case GuiScreen.Start:
+                case GuiScreen.MainMenu:
+                    return AudioTrack.StartScreen;
+                case GuiScreen.Pause:
+                case GuiScreen.ReturnToMainMenuConfirm:
+                case GuiScreen.InGame:
+                    return AudioTrack.InGame;
+                case GuiScreen.Help:
+                case GuiScreen.Controls:
+                case GuiScreen.QuitConfirm:
+                case GuiScreen.LevelComplete:
+                    return LevelManager.Instance.GetCurrLevel() == 0 ? AudioTrack.StartScreen : AudioTrack.InGame;
+                case GuiScreen.GameOver:
+                    return AudioTrack.GameOver;
+                case GuiScreen.GameCompletion:
+                    return AudioTrack.GameCompletion;
+                default:
+                    throw new RuntimeException(screen + " not mapped");
+            }
         }
 
         public void UpdateBoostsInHud(int boosts)

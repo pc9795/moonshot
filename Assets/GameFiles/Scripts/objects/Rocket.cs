@@ -97,7 +97,9 @@ namespace GameFiles.Scripts.objects
             // Have to check IsAlive as it could be case while we are playing blast animation and we reach moon.
             if (other.CompareTag(Tag.Moon) && _rocketManager.IsAlive())
             {
-                WinLevel();
+                AudioManager.Instance.Play(AudioTrack.ReachMoon);
+                _guiManager.NavigateTo(GuiScreen.LevelComplete);
+                GameManager.Pause();
             }
         }
 
@@ -112,20 +114,9 @@ namespace GameFiles.Scripts.objects
 
         private void Die()
         {
+            AudioManager.Instance.Play(AudioTrack.RocketBlast);
             _rocketBodyAnimations.BlastAnimation();
             _rocketManager.Die();
-        }
-
-        private void WinLevel()
-        {
-            if (LevelManager.Instance.DevMode)
-            {
-                GameManager.RestartCurrLevel();
-            }
-            else
-            {
-                GameManager.NextLevel();
-            }
         }
 
         public void LoseLevel()

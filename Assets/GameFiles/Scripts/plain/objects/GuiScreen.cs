@@ -11,6 +11,7 @@
         GameOver,
         InGame,
         ReturnToMainMenuConfirm,
-        QuitConfirm
+        QuitConfirm,
+        LevelComplete
     }
 }

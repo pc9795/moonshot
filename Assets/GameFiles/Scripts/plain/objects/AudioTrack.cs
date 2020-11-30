@@ -13,7 +13,7 @@
         public const string Launch = "Launch";
         public const string RocketBlast = "RocketBlast";
         public const string AsteroidBlast = "AsteroidBlast";
-        public const string ReachMoon = "ReachMoon";
+        public const string ReachMoon = "ReachMoon";    
         public const string Bounce = "Bounce";
     }
 }

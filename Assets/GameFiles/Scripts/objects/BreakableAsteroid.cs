@@ -1,4 +1,6 @@
 ﻿using GameFiles.Scripts.animations;
+using GameFiles.Scripts.managers;
+using GameFiles.Scripts.plain.objects;
 using UnityEngine;
 
 namespace GameFiles.Scripts.objects
@@ -19,6 +21,7 @@ namespace GameFiles.Scripts.objects
 
         public void Blast()
         {
+            AudioManager.Instance.Play(AudioTrack.AsteroidBlast);
             _blasting = true;
             _collider2D.isTrigger = true; // Ignore further collisions
             _breakableAsteroidBodyAnimations.BlastAnimation();

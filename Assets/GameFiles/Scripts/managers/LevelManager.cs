@@ -53,6 +53,11 @@ namespace GameFiles.Scripts.managers
             _levels.Add("GameFiles/Scenes/End");
         }
 
+        public int GetCurrLevel()
+        {
+            return _currLevelIndex;
+        }
+
         public void NextLevel()
         {
             _currLevelIndex++;

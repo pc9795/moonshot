@@ -73,7 +73,7 @@ namespace GameFiles.Scripts.managers
 
         private Sound GetFromAudioTrackName(string audioTrackName)
         {
-            var sound = _soundsDict[audioTrackName];
+            var sound = _soundsDict[audioTrackName]; //todo getting exception here if audioTrackName doesn't exist
             if (sound != null) return sound;
             Debug.Log("Requesterd track: " + name + " not found!");
             return null;

@@ -40,6 +40,7 @@ namespace GameFiles.Scripts.managers
         public static void ContinueGame()
         {
             Debug.Log("Continue!");
+            //todo implement
         }
 
         public static void NewGame()
