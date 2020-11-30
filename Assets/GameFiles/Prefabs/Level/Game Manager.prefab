@@ -87,4 +87,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551efaeebcfd16f45a09e82b1e444ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sounds: []
+  Sounds:
+  - Name: StartScreen
+    Clip: {fileID: 8300000, guid: 6e5dfb70578ce7f4abf56881210ab474, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: UseDropShip
+    Clip: {fileID: 8300000, guid: ab9a685cc3b526c49ae73062c9b9c643, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: UseBullet
+    Clip: {fileID: 8300000, guid: 9654d779555333741bec06551b03b922, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: UiButtonClick
+    Clip: {fileID: 8300000, guid: c9b24d5fb07c2b64eb722fe85eb6bf07, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: UseBoost
+    Clip: {fileID: 8300000, guid: 513ab43b0e0639645b46d748ab49b12c, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Launch
+    Clip: {fileID: 8300000, guid: e12945c35af697a41b3d9101537c5411, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}

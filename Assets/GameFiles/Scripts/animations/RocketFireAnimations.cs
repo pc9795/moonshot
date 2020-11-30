@@ -1,14 +1,15 @@
 ﻿using GameFiles.Scripts.plain.objects;
 using UnityEngine;
 
-namespace GameFiles.Scripts.objects
+namespace GameFiles.Scripts.animations
 {
-    public class RocketFire : MonoBehaviour
+    public class RocketFireAnimations : MonoBehaviour
     {
         public Animator RocketFireAnimator;
 
         public void LaunchFireAnimation()
         {
+            RocketFireAnimator.SetBool(MoonShotAnimator.Parameters.LaunchFire, false); //todo evaluate
             RocketFireAnimator.SetBool(MoonShotAnimator.Parameters.LaunchFire, true);
         }
 

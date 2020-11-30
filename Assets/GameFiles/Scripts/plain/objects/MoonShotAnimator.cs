@@ -5,6 +5,7 @@
         public class Parameters
         {
             public const string LaunchFire = "LaunchFire";
+            public const string Alive = "Alive";
         }
     }
 }

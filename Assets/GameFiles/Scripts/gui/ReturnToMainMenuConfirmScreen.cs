@@ -16,12 +16,14 @@ namespace GameFiles.Scripts.gui
         // ReSharper disable once UnusedMember.Global
         public void Yes()
         {
+            AudioManager.Instance.Play(AudioTrack.UiButtonCick);
             GameManager.OpenMainMenu();
         }
 
         // ReSharper disable once UnusedMember.Global
         public void No()
         {
+            AudioManager.Instance.Play(AudioTrack.UiButtonCick);
             _guiManager.NavigateToPrevScreen();
         }
     }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameFiles.Scripts.plain.objects;
+using UnityEngine;
 
 namespace GameFiles.Scripts.managers
 {
@@ -23,6 +24,11 @@ namespace GameFiles.Scripts.managers
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+        }
+
+        private void Start()
+        {
+            AudioManager.Instance.Play(AudioTrack.StartScreen);
         }
 
         public static void Quit()

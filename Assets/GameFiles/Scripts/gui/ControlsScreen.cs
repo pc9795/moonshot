@@ -1,4 +1,5 @@
 ﻿using GameFiles.Scripts.managers;
+using GameFiles.Scripts.plain.objects;
 using UnityEngine;
 
 namespace GameFiles.Scripts.gui
@@ -15,6 +16,7 @@ namespace GameFiles.Scripts.gui
         // ReSharper disable once UnusedMember.Global
         public void Back()
         {
+            AudioManager.Instance.Play(AudioTrack.UiButtonCick);
             _guiManager.NavigateToPrevScreen();
         }
     }

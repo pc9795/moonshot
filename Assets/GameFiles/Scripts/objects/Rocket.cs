@@ -1,4 +1,5 @@
-﻿using GameFiles.Scripts.behaviours;
+﻿using GameFiles.Scripts.animations;
+using GameFiles.Scripts.behaviours;
 using GameFiles.Scripts.managers;
 using GameFiles.Scripts.plain.objects;
 using UnityEngine;
@@ -12,7 +13,6 @@ namespace GameFiles.Scripts.objects
         public float TurnSenstivityAtLaunch = 0.3f;
         public float PayloadDropDownwardThurst = 200;
         public float GravityScale = 0.5f;
-        public RocketFire RocketFire;
 
         private Rigidbody2D _rigidbody;
         private bool _launched;
@@ -21,6 +21,8 @@ namespace GameFiles.Scripts.objects
         private PayloadDropper _payloadDropper;
         private Rotator _rotator;
         private GuiManager _guiManager;
+        private RocketFireAnimations _rocketFireAnimations;
+        private RocketBodyAnimations _rocketBodyAnimations;
 
         private void Start()
         {
@@ -32,6 +34,8 @@ namespace GameFiles.Scripts.objects
             _payloadDropper = GetComponent<PayloadDropper>();
             _rotator = GetComponent<Rotator>();
             _guiManager = FindObjectOfType<GuiManager>();
+            _rocketFireAnimations = GetComponentInChildren<RocketFireAnimations>();
+            _rocketBodyAnimations = GetComponentInChildren<RocketBodyAnimations>();
         }
 
         private void Update()
@@ -43,12 +47,13 @@ namespace GameFiles.Scripts.objects
 
             if (!_launched && Input.GetKeyDown(KeyCode.Space))
             {
+                AudioManager.Instance.Play(AudioTrack.Launch);
                 _launched = true;
                 _rigidbody.bodyType = RigidbodyType2D.Dynamic;
                 _rigidbody.AddForce(transform.up * LaunchThurst);
                 _rotator.Detach();
                 _rotator.SetTurnSenstivity(TurnSenstivityAtLaunch);
-                RocketFire.LaunchFireAnimation();
+                _rocketFireAnimations.LaunchFireAnimation();
                 return;
             }
 
@@ -56,19 +61,22 @@ namespace GameFiles.Scripts.objects
             {
                 if (Input.GetKeyDown(KeyCode.Space) && _rocketManager.CanBoost())
                 {
+                    AudioManager.Instance.Play(AudioTrack.UseBoost);
                     _rocketManager.UseBoost();
                     _rigidbody.AddForce(transform.up * BoostThrust);
-                    RocketFire.LaunchFireAnimation();
+                    _rocketFireAnimations.LaunchFireAnimation();
                 }
 
                 if (Input.GetKeyDown(KeyCode.E) && _rocketManager.CanShoot())
                 {
+                    AudioManager.Instance.Play(AudioTrack.UseBullet);
                     _rocketManager.UseBullet();
                     _bulletShooter.Shoot();
                 }
 
                 if (Input.GetKeyDown(KeyCode.Q) && _rocketManager.CanDropPaylod())
                 {
+                    AudioManager.Instance.Play(AudioTrack.UseDropShip);
                     _rocketManager.UsePayload();
                     _payloadDropper.Drop();
                     _rigidbody.AddForce(-transform.up * PayloadDropDownwardThurst);
@@ -80,13 +88,14 @@ namespace GameFiles.Scripts.objects
         {
             if (other.CompareTag(Tag.Boundary))
             {
-                LoseLevel();
+                Die();
             }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag(Tag.Moon))
+            // Have to check IsAlive as it could be case while we are playing blast animation and we reach moon.
+            if (other.CompareTag(Tag.Moon) && _rocketManager.IsAlive())
             {
                 WinLevel();
             }
@@ -95,23 +104,16 @@ namespace GameFiles.Scripts.objects
         private void OnCollisionEnter2D(Collision2D other)
         {
             BreakableAsteroid breakableAsteroid = other.collider.GetComponent<BreakableAsteroid>();
-            if (breakableAsteroid != null)
+            if (breakableAsteroid != null && !breakableAsteroid.IsBlasting())
             {
-                LoseLevel();
+                Die();
             }
         }
 
-        private void LoseLevel()
+        private void Die()
         {
+            _rocketBodyAnimations.BlastAnimation();
             _rocketManager.Die();
-            if (LevelManager.Instance.DevMode)
-            {
-                GameManager.RestartCurrLevel();
-            }
-            else
-            {
-                _guiManager.NavigateTo(GuiScreen.GameOver);
-            }
         }
 
         private void WinLevel()
@@ -123,6 +125,18 @@ namespace GameFiles.Scripts.objects
             else
             {
                 GameManager.NextLevel();
+            }
+        }
+
+        public void LoseLevel()
+        {
+            if (LevelManager.Instance.DevMode)
+            {
+                GameManager.RestartCurrLevel();
+            }
+            else
+            {
+                _guiManager.NavigateTo(GuiScreen.GameOver);
             }
         }
     }
