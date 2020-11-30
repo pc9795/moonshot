@@ -30,7 +30,6 @@ namespace GameFiles.Scripts.objects
             BreakableAsteroid breakableAsteroid = other.collider.GetComponent<BreakableAsteroid>();
             if (breakableAsteroid != null)
             {
-                Debug.Log("Blast");
                 breakableAsteroid.Blast();
                 Blast();
             }

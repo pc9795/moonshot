@@ -96,5 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a0f244fd5dbe545bfb94ca0e8f8351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ToFollow: {fileID: 0}
+  Rocket: {fileID: 0}
   Offset: {x: 0, y: 3}
+  ScrollSpeed: 0.08
+  MaxY: 50
+  MinY: -30

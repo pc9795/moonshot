@@ -21,10 +21,10 @@ namespace GameFiles.Scripts.objects
 
         public void Blast()
         {
-            AudioManager.Instance.Play(AudioTrack.AsteroidBlast);
+            _breakableAsteroidBodyAnimations.BlastAnimation();
             _blasting = true;
             _collider2D.isTrigger = true; // Ignore further collisions
-            _breakableAsteroidBodyAnimations.BlastAnimation();
+            AudioManager.Instance.Play(AudioTrack.AsteroidBlast);
         }
 
         public bool IsBlasting()

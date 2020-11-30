@@ -22,7 +22,7 @@ namespace GameFiles.Scripts.managers
         public GameObject BoostsHud;
         public GameObject DropshipsHud;
         public GameObject BulletsHud;
-        
+
         private bool _paused;
         private GuiScreen _currScreen;
         private GuiScreen _prevScreen;
@@ -154,32 +154,32 @@ namespace GameFiles.Scripts.managers
 
         public void UpdateBoostsInHud(int boosts)
         {
-            BoostsHud.GetComponentInChildren<Text>().text = boosts.ToString();
+            BoostsHud.GetComponentInChildren<Text>().text = "Boosts: " + boosts;
         }
 
         public void MakeBoostsNotAvailableInHud()
         {
-            BoostsHud.GetComponentInChildren<Text>().text = "Recharging...";
+            BoostsHud.GetComponentInChildren<Text>().text = "Boosts: Recharging...";
         }
 
         public void UpdateDropshipsInHud(int dropships)
         {
-            DropshipsHud.GetComponentInChildren<Text>().text = dropships.ToString();
+            DropshipsHud.GetComponentInChildren<Text>().text = "Dropships: " + dropships;
         }
 
         public void MakeDropshipsNotAvailableInHud()
         {
-            DropshipsHud.GetComponentInChildren<Text>().text = "Recharging...";
+            DropshipsHud.GetComponentInChildren<Text>().text = "Dropships: Recharging...";
         }
 
         public void UpdateBulletsInHud(int bullets)
         {
-            BulletsHud.GetComponentInChildren<Text>().text = bullets.ToString();
+            BulletsHud.GetComponentInChildren<Text>().text = "Bullets: " + bullets;
         }
 
         public void MakeBulletsNotAvailableInHud()
         {
-            BulletsHud.GetComponentInChildren<Text>().text = "Recharging...";
+            BulletsHud.GetComponentInChildren<Text>().text = "Bullets: Recharging...";
         }
     }
 }

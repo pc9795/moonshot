@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51890cc79adc11140aa878c6bdd9ce05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnSenstiivity: 0.3
+  TurnSenstiivity: 0.2
   MaxSteerAngle: 30
   Stand: {fileID: 0}
 --- !u!50 &3957531349113722390
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaunchThurst: 300
   BoostThrust: 400
-  TurnSenstivityAtLaunch: 0.3
+  TurnSenstivityAtLaunch: 0.2
   PayloadDropDownwardThurst: 200
   GravityScale: 0.5
 --- !u!114 &3658700454792164613
