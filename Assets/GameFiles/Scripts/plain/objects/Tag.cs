@@ -1,8 +1,6 @@
-﻿using UnityEngine;
-
-namespace GameFiles.Scripts.plain.objects
+﻿namespace GameFiles.Scripts.plain.objects
 {
-    public class Tag : MonoBehaviour
+    public class Tag
     {
         public const string Boundary = "boundary";
         public const string Moon = "moon";

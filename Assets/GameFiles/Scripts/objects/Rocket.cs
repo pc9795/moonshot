@@ -12,6 +12,7 @@ namespace GameFiles.Scripts.objects
         public float TurnSenstivityAtLaunch = 0.3f;
         public float PayloadDropDownwardThurst = 200;
         public float GravityScale = 0.5f;
+        public RocketFire RocketFire;
 
         private Rigidbody2D _rigidbody;
         private bool _launched;
@@ -47,6 +48,7 @@ namespace GameFiles.Scripts.objects
                 _rigidbody.AddForce(transform.up * LaunchThurst);
                 _rotator.Detach();
                 _rotator.SetTurnSenstivity(TurnSenstivityAtLaunch);
+                RocketFire.LaunchFireAnimation();
                 return;
             }
 
@@ -56,6 +58,7 @@ namespace GameFiles.Scripts.objects
                 {
                     _rocketManager.UseBoost();
                     _rigidbody.AddForce(transform.up * BoostThrust);
+                    RocketFire.LaunchFireAnimation();
                 }
 
                 if (Input.GetKeyDown(KeyCode.E) && _rocketManager.CanShoot())
