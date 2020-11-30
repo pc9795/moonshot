@@ -8,9 +8,10 @@ namespace GameFiles.Scripts.managers
     public class LevelManager : MonoBehaviour
     {
         public static LevelManager Instance;
-        
+
         public bool DevMode;
         public int DevModeCurrLevel;
+        public int LevelsCount = 10;
 
         private List<string> _levels;
         private int _currLevelIndex;
@@ -20,15 +21,7 @@ namespace GameFiles.Scripts.managers
         private void Awake()
         {
             Init();
-            _levels = new List<string>
-            {
-                "GameFiles/Scenes/Begin",
-                "GameFiles/Scenes/Level 1",
-                "GameFiles/Scenes/Level 2",
-                "GameFiles/Scenes/Level 3",
-                "GameFiles/Scenes/Level 4",
-                "GameFiles/Scenes/End"
-            };
+            InitLevels();
             _startScreenOpened = false;
             _currLevelIndex = DevMode ? DevModeCurrLevel : 0;
         }
@@ -44,6 +37,20 @@ namespace GameFiles.Scripts.managers
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+        }
+
+        private void InitLevels()
+        {
+            _levels = new List<string>
+            {
+                "GameFiles/Scenes/Begin",
+            };
+            for (var i = 1; i <= LevelsCount; i++)
+            {
+                _levels.Add("GameFiles/Scenes/Level " + i);
+            }
+
+            _levels.Add("GameFiles/Scenes/End");
         }
 
         public void NextLevel()

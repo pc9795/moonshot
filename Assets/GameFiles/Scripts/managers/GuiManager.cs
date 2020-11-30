@@ -36,7 +36,7 @@ namespace GameFiles.Scripts.managers
                 {GuiScreen.Controls, ControlsScreen},
                 {GuiScreen.Pause, PauseScreen},
                 {GuiScreen.GameCompletion, GameCompletionScreen},
-                {GuiScreen.GameOver, GameOverScreen},
+                {GuiScreen.GameOver, GameOverScreen},    
                 {GuiScreen.ReturnToMainMenuConfirm, ReturnToMainMenuConfirmScreen},
                 {GuiScreen.QuitConfirm, QuitConfirmScreen}
             };
