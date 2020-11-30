@@ -16,6 +16,7 @@ namespace GameFiles.Scripts.gui
         // ReSharper disable once UnusedMember.Global
         public void Yes()
         {
+            GameManager.Resume();
             AudioManager.Instance.Play(AudioTrack.UiButtonCick);
             GameManager.OpenMainMenu();
         }

@@ -24,6 +24,7 @@ namespace GameFiles.Scripts.gui
         // ReSharper disable once UnusedMember.Global
         public void Restart()
         {
+            GameManager.Resume();
             AudioManager.Instance.Play(AudioTrack.UiButtonCick);
             _guiManager.NavigateTo(GuiScreen.InGame);
             Debug.Log("Current level reloaded!");

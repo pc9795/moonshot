@@ -1,4 +1,4 @@
-﻿using Boo.Lang.Runtime;
+﻿using System;
 
 namespace GameFiles.Scripts.plain.objects
 {
@@ -16,7 +16,7 @@ namespace GameFiles.Scripts.plain.objects
         {
             if (!CanUse())
             {
-                throw new RuntimeException("Can't use it right now");
+                throw new SystemException("Can't use it right now");
             }
 
             _quantity--;

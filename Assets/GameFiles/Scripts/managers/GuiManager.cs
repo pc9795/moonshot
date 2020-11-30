@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Boo.Lang.Runtime;
+﻿using System;
+using System.Collections.Generic;
 using GameFiles.Scripts.plain.objects;
 using UnityEngine;
 using UnityEngine.UI;
@@ -148,7 +148,7 @@ namespace GameFiles.Scripts.managers
                 case GuiScreen.GameCompletion:
                     return AudioTrack.GameCompletion;
                 default:
-                    throw new RuntimeException(screen + " not mapped");
+                    throw new SystemException(screen + " not mapped!");
             }
         }
 
