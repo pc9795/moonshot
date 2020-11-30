@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5923d0f6475b3a74dae636bb1a36b214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 0.1
+  BulletSpeed: 0.03
   BulletDuration: 3
 --- !u!114 &6582939637260445658
 MonoBehaviour:
@@ -74,6 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DevMode: 0
   DevModeCurrLevel: 0
+  LevelsCount: 10
 --- !u!114 &1341728022951853304
 MonoBehaviour:
   m_ObjectHideFlags: 0
