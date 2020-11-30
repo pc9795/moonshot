@@ -105,7 +105,7 @@ namespace GameFiles.Scripts.objects
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            BreakableAsteroid breakableAsteroid = other.collider.GetComponent<BreakableAsteroid>();
+            var breakableAsteroid = other.collider.GetComponent<BreakableAsteroid>();
             if (breakableAsteroid != null && !breakableAsteroid.IsBlasting())
             {
                 Die();

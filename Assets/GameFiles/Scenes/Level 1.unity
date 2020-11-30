@@ -455,6 +455,11 @@ PrefabInstance:
       propertyPath: Rocket
       value: 
       objectReference: {fileID: 8580322849161677044}
+    - target: {fileID: 2639514906525604046, guid: ed6ba29d2cafb1d44ae43110cce1c918,
+        type: 3}
+      propertyPath: ScrollSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2639514906525604047, guid: ed6ba29d2cafb1d44ae43110cce1c918,
         type: 3}
       propertyPath: orthographic
@@ -670,31 +675,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dac76fa54e7bc144eae18b8ffef43d9e, type: 3}
---- !u!1 &1950452393 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8580322849076748971, guid: 7b5d319f3fff549498891d394b56ae65,
-    type: 3}
-  m_PrefabInstance: {fileID: 8580322849161677043}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1950452394
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950452393}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e447ccac288d82744adc7b9142427023, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8580322849161677043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -775,7 +755,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8580322849161677043}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950452393}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba4ea16260cb2cb4eaca4877d583676f, type: 3}

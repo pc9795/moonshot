@@ -14,7 +14,7 @@ namespace GameFiles.Scripts.behaviours
         private void Update()
         {
             _horizontalInput = Input.GetAxis("Horizontal");
-            var steerAngle = _horizontalInput * MaxSteerAngle * TurnSenstiivity;
+            var steerAngle = _horizontalInput * MaxSteerAngle * TurnSenstiivity * Time.deltaTime;
             if (!_deatached)
             {
                 transform.RotateAround(Stand.position, Vector3.back, steerAngle);

@@ -27,7 +27,6 @@ namespace GameFiles.Scripts.gui
             GameManager.Resume();
             AudioManager.Instance.Play(AudioTrack.UiButtonCick);
             _guiManager.NavigateTo(GuiScreen.InGame);
-            Debug.Log("Current level reloaded!");
             GameManager.RestartCurrLevel();
         }
 

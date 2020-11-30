@@ -50,15 +50,6 @@ namespace GameFiles.Scripts.managers
             }
         }
 
-        public void PlayIfNotPlaying(string audioTrackName)
-        {
-            var sound = GetFromAudioTrackName(audioTrackName);
-            if (sound != null && !sound.Source.isPlaying)
-            {
-                sound.Source.Play();
-            }
-        }
-
         public void Play(string audioTrackName)
         {
             var sound = GetFromAudioTrackName(audioTrackName);

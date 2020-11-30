@@ -14,7 +14,7 @@ namespace GameFiles.Scripts.managers
 
         private void Start()
         {
-            if (!Rocket)
+            if (!Rocket) // For begin and end screens
             {
                 return;
             }
@@ -26,7 +26,7 @@ namespace GameFiles.Scripts.managers
 
         private void Update()
         {
-            if (!Rocket)
+            if (!Rocket) // For begin and end screens
             {
                 return;
             }
@@ -46,7 +46,7 @@ namespace GameFiles.Scripts.managers
         private void ScrollCamera()
         {
             var verticalInput = Input.GetAxis("Vertical");
-            var newY = transform.position.y + ScrollSpeed * verticalInput;
+            var newY = transform.position.y + ScrollSpeed * verticalInput * Time.deltaTime;
             if (newY > MaxY || newY < MinY)
             {
                 return;

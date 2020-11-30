@@ -107,7 +107,7 @@ namespace GameFiles.Scripts.managers
                 _screenEnumToGameObject[_prevScreen].SetActive(true);
             }
 
-            GuiScreen temp = _prevScreen;
+            var temp = _prevScreen;
             _prevScreen = _currScreen;
             _currScreen = temp;
             PlayMusic();

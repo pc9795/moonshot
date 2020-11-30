@@ -1,11 +1,10 @@
-﻿using GameFiles.Scripts.plain.objects;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace GameFiles.Scripts.managers
 {
     public class GameManager : MonoBehaviour
     {
-        public static GameManager Instance;
+        private static GameManager _instance;
 
         private void Awake()
         {
@@ -15,13 +14,13 @@ namespace GameFiles.Scripts.managers
 
         private void Init()
         {
-            if (Instance != null)
+            if (_instance != null)
             {
                 Destroy(gameObject);
             }
             else
             {
-                Instance = this;
+                _instance = this;
                 DontDestroyOnLoad(gameObject);
             }
         }

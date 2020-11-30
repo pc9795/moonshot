@@ -16,18 +16,18 @@ namespace GameFiles.Scripts.objects
 
         private void Update()
         {
-            transform.position += _direction * ConfigManager.Instance.BulletSpeed;
+            transform.position += _direction * ConfigManager.Instance.BulletSpeed * Time.deltaTime;
         }
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            Rocket rocket = other.collider.GetComponent<Rocket>();
+            var rocket = other.collider.GetComponent<Rocket>();
             if (rocket != null)
             {
                 return;
             }
 
-            BreakableAsteroid breakableAsteroid = other.collider.GetComponent<BreakableAsteroid>();
+            var breakableAsteroid = other.collider.GetComponent<BreakableAsteroid>();
             if (breakableAsteroid != null)
             {
                 breakableAsteroid.Blast();
