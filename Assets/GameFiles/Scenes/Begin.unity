@@ -128,6 +128,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6582939637260445658, guid: 278fdaf7e9134d342a1cd93353d0a1d8,
+        type: 3}
+      propertyPath: LevelsCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582939637260445658, guid: 278fdaf7e9134d342a1cd93353d0a1d8,
+        type: 3}
+      propertyPath: DevMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8452229907424588929, guid: 278fdaf7e9134d342a1cd93353d0a1d8,
         type: 3}
       propertyPath: BulletSpeed

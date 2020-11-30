@@ -49,7 +49,6 @@ namespace GameFiles.Scripts.managers
             {
                 _screenEnumToGameObject[_currScreen].SetActive(true);
             }
-
             PlayMusic();
         }
 

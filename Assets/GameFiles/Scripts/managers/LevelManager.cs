@@ -83,7 +83,12 @@ namespace GameFiles.Scripts.managers
 
         public GuiScreen GetStartingPrevScreenForCurrLevel()
         {
-            return _currLevelIndex == 0 || _currLevelIndex == _levels.Count - 1 ? GuiScreen.InGame : GuiScreen.MainMenu;
+            if (_currLevelIndex == 0)
+            {
+                return GuiScreen.GameCompletion;
+            }
+
+            return _currLevelIndex == _levels.Count - 1 ? GuiScreen.InGame : GuiScreen.MainMenu;
         }
 
         public GuiScreen GetStartingCurrScreenForCurrLevel()

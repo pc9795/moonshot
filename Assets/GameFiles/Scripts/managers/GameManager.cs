@@ -26,11 +26,6 @@ namespace GameFiles.Scripts.managers
             }
         }
 
-        private void Start()
-        {
-            AudioManager.Instance.Play(AudioTrack.StartScreen);
-        }
-
         public static void Quit()
         {
             Debug.Log("Quit!");

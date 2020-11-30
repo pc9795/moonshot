@@ -14,6 +14,11 @@ namespace GameFiles.Scripts.managers
 
         private void Start()
         {
+            if (!Rocket)
+            {
+                return;
+            }
+
             transform.position = new Vector3(Rocket.transform.position.x + Offset.x,
                 Rocket.transform.position.y + Offset.y,
                 transform.position.z);
@@ -21,6 +26,11 @@ namespace GameFiles.Scripts.managers
 
         private void Update()
         {
+            if (!Rocket)
+            {
+                return;
+            }
+
             if (!Rocket.IsLaunched())
             {
                 ScrollCamera();

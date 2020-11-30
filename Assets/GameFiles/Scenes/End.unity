@@ -131,12 +131,17 @@ PrefabInstance:
     - target: {fileID: 6582939637260445658, guid: 278fdaf7e9134d342a1cd93353d0a1d8,
         type: 3}
       propertyPath: DevMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6582939637260445658, guid: 278fdaf7e9134d342a1cd93353d0a1d8,
         type: 3}
       propertyPath: DevModeCurrLevel
-      value: 11
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582939637260445658, guid: 278fdaf7e9134d342a1cd93353d0a1d8,
+        type: 3}
+      propertyPath: LevelsCount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8452229907424588930, guid: 278fdaf7e9134d342a1cd93353d0a1d8,
         type: 3}
