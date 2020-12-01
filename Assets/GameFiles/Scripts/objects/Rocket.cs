@@ -13,6 +13,7 @@ namespace GameFiles.Scripts.objects
         public float TurnSenstivityAtLaunch = 0.3f;
         public float PayloadDropDownwardThurst = 200;
         public float GravityScale = 0.5f;
+        public float RestBoostsMultiplier = 1.3f;
 
         private Rigidbody2D _rigidbody;
         private bool _launched;
@@ -23,6 +24,7 @@ namespace GameFiles.Scripts.objects
         private GuiManager _guiManager;
         private RocketFireAnimations _rocketFireAnimations;
         private RocketBodyAnimations _rocketBodyAnimations;
+        private bool _firstBoost = true;
 
         private void Start()
         {
@@ -36,6 +38,7 @@ namespace GameFiles.Scripts.objects
             _guiManager = FindObjectOfType<GuiManager>();
             _rocketFireAnimations = GetComponentInChildren<RocketFireAnimations>();
             _rocketBodyAnimations = GetComponentInChildren<RocketBodyAnimations>();
+            _rigidbody.freezeRotation = true;
         }
 
         private void Update()
@@ -63,10 +66,10 @@ namespace GameFiles.Scripts.objects
                 {
                     AudioManager.Instance.Play(AudioTrack.UseBoost);
                     _rocketManager.UseBoost();
-                    _rigidbody.AddForce(transform.up * BoostThrust);
+                    _rigidbody.AddForce(transform.up * BoostThrust * (_firstBoost ? 1f : RestBoostsMultiplier));
                     _rocketFireAnimations.LaunchFireAnimation();
+                    _firstBoost = false;
                 }
-
                 if (Input.GetKeyDown(KeyCode.E) && _rocketManager.CanShoot())
                 {
                     AudioManager.Instance.Play(AudioTrack.UseBullet);
