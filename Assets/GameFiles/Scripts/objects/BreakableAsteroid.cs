@@ -1,5 +1,4 @@
-﻿using System;
-using GameFiles.Scripts.animations;
+﻿using GameFiles.Scripts.animations;
 using GameFiles.Scripts.managers;
 using GameFiles.Scripts.plain.objects;
 using UnityEngine;
